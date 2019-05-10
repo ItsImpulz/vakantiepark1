@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vakantiepark.Huizeninvoer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vakantiepark"
+        mc:Ignorable="d"
+        Title="Huizeninvoer" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Button x:Name="btnTypes" Content="Huizentypes" HorizontalAlignment="Left" Margin="547,374,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="btnTypes_Click"/>
+        <DataGrid x:Name="dgHuizen" HorizontalAlignment="Left" Height="420" Margin="35,-1,0,0" VerticalAlignment="Top" Width="406" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Wijzig">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnChange" Content="Wijzig" Click="btnChange_Click" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Foreground="Red" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding name}" ClipboardContentBinding="{x:Null}" Header="Nummer"/>
+                <DataGridTextColumn Binding="{Binding housetype.type}" ClipboardContentBinding="{x:Null}" Header="Type"/>
+                <DataGridTextColumn Binding="{Binding housesize.size}" ClipboardContentBinding="{x:Null}" Header="Grootte"/>
+                <DataGridTextColumn Binding="{Binding price}" ClipboardContentBinding="{x:Null}" Header="Prijs"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Huizeninvoer" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Margin="483,9,0,0"/>
+        <Label Content="Type:" HorizontalAlignment="Left" Margin="483,83,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cbType" HorizontalAlignment="Left" Margin="600,90,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <Label Content="Grootte:" HorizontalAlignment="Left" Margin="483,123,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <ComboBox x:Name="cbSize" HorizontalAlignment="Left" Margin="600,131,0,0" VerticalAlignment="Top" Width="120" Height="23"/>
+        <Label Content="Nummer:" HorizontalAlignment="Left" Margin="483,161,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="txtNummer" HorizontalAlignment="Left" Height="23" Margin="600,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="16"/>
+        <Label Content="Prijs:" HorizontalAlignment="Left" Margin="483,198,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <TextBox x:Name="txtPrijs" HorizontalAlignment="Left" Height="23" Margin="600,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="18" RenderTransformOrigin="0.491,0.453"/>
+        <Button x:Name="btnToevoegen" Content="Voeg toe!" HorizontalAlignment="Left" Margin="483,239,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="btnToevoegen_Click"/>
+        <Label Content="€" HorizontalAlignment="Left" Margin="579,197,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="643,374,0,0" VerticalAlignment="Top" Width="75" Height="35" Click="btnMenu_Click"/>
+
+    </Grid>
+</Window>

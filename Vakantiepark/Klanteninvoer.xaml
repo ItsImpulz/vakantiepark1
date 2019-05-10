@@ -1,0 +1,45 @@
+﻿<Window x:Class="Vakantiepark.Klanteninvoer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vakantiepark"
+        mc:Ignorable="d"
+        Title="Klanteninvoer" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="dgKlant" HorizontalAlignment="Left" Height="373" VerticalAlignment="Top" Width="391" Margin="24,10,0,0" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Wijzig">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnChange" Content="Wijzig" Click="btnChange_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Binding="{Binding id}" ClipboardContentBinding="{x:Null}" Foreground="Red" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding firstname}" ClipboardContentBinding="{x:Null}" Header="Voornaam"/>
+                <DataGridTextColumn Binding="{Binding lastname}" ClipboardContentBinding="{x:Null}" Header="Achternaam"/>
+                <DataGridTextColumn Binding="{Binding birthdate}" ClipboardContentBinding="{x:Null}" Header="Geboortedatum"/>
+                <DataGridTextColumn Binding="{Binding city}" ClipboardContentBinding="{x:Null}" Header="Woonplaats"/>
+                <DataGridTextColumn Binding="{Binding phonenumber}" ClipboardContentBinding="{x:Null}" Header="Telefoon"/>
+                <DataGridTextColumn Binding="{Binding email}" ClipboardContentBinding="{x:Null}" Header="E-Mail"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Achternaam:" HorizontalAlignment="Left" Margin="468,134,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="470,283,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Telefoonnummer:" HorizontalAlignment="Left" Margin="468,246,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Woonplaats:" HorizontalAlignment="Left" Margin="470,209,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Geboortedatum:" HorizontalAlignment="Left" Margin="468,172,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Voornaam:" HorizontalAlignment="Left" Margin="468,97,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="txtVoornaam" HorizontalAlignment="Left" Height="23" Margin="615,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtAchternaam" HorizontalAlignment="Left" Height="23" Margin="615,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtWoonplaats" HorizontalAlignment="Left" Height="23" Margin="615,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtTelefoonnummer" HorizontalAlignment="Left" Height="23" Margin="615,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="615,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DatePicker x:Name="dpGeboortedatum" HorizontalAlignment="Left" Margin="615,180,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnInvoer" Content="Voer in!" HorizontalAlignment="Left" Margin="483,330,0,0" VerticalAlignment="Top" Width="89" Height="29" Click="btnInvoer_Click"/>
+        <Label Content="Klanteninvoer" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Margin="468,22,0,0"/>
+        <Button x:Name="btnMenu" Content="Menu" HorizontalAlignment="Left" Margin="688,382,0,0" VerticalAlignment="Top" Width="94" Height="27" Click="btnMenu_Click"/>
+
+    </Grid>
+</Window>
